@@ -1,7 +1,7 @@
 import { ACTIONS_TYPE } from './../constants/actions-type';
 export const addUsers = (user)=>{
     return {
-        type:ACTIONS_TYPE.,
+        type:"",
         payload:user
     }
 }
