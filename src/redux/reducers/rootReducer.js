@@ -1,3 +1,4 @@
+import constants from './../constants/actions-type';
 const initialeState= {
     users:[
         {
@@ -24,7 +25,20 @@ const initialeState= {
 }
 
 function rootReducer(state=initialeState, action){
-  return state;
+    switch (action.type) {
+        case constants.ADD_USER:
+            return {
+                users:[
+                    ...state.users,action.payload
+                ]
+            }
+            break;
+            
+        default:
+            return state;
+    }
+ 
 }
+
 
 export default rootReducer;
