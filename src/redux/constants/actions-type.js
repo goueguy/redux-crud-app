@@ -1,0 +1,7 @@
+const ACTIONS_TYPE = {
+    'ADD_USER':"ADD-USER",
+    'DELETE_USER':"DELETE-USER",
+    'UPDATE_USER':'UPDATE-USER'
+}
+
+export default ACTIONS_TYPE;

@@ -1,21 +1,21 @@
-import { ACTIONS_TYPE } from './../constants/actions-type';
+import constants from './../constants/actions-type';
 export const addUsers = (user)=>{
     return {
-        type:"",
+        type: constants.ADD_USER,
         payload:user
     }
 }
 
 export const deleteUsers = (id)=>{
     return {
-        type:"DELETE-USER",
+        type: constants.DELETE_USER,
         payload:id
     }
 }
 
 export const updateUsers = (user)=>{
     return {
-        type:"UPDATE-USER",
+        type: constants.UPDATE_USER,
         payload:user
     }
 }
