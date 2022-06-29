@@ -1,11 +1,9 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import Users from './Users'
 
 const UserList = () => {
-    const dispatch = useDispatch();
-    const users = useSelector(state=>state.users);
-    
+    const users = useSelector(state=>state.users.users);
     return (
         <div className="col-lg-8 offset-lg-2 mt-4">
             <table className="table table-bordered">

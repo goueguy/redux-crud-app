@@ -1,4 +1,5 @@
 import constants from './../constants/actions-type';
+
 export const addUsersAction = (user)=>{
     return {
         type: constants.ADD_USER,
@@ -13,7 +14,26 @@ export const deleteUsersAction = (id)=>{
     }
 }
 
-export const updateUsers = (user)=>{
+export const editUsersAction = (id)=>{
+    return {
+        type: constants.EDIT_USER,
+        payload:id
+    }
+}
+
+export const findUsersAction = (id)=>{
+    return {
+        type: constants.FIND_USER,
+        payload:id
+    }
+}
+export const getUsersAction = ()=>{
+    return {
+        type: constants.GET_USER,
+        payload:[]
+    }
+}
+export const updateUsersAction = (user)=>{
     return {
         type: constants.UPDATE_USER,
         payload:user
