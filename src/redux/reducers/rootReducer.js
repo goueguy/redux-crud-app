@@ -3,23 +3,29 @@ const initialeState= {
     users:[
         {
             "id":1,
-            "name":"NSIA Participations"
+            "name":"NSIA Participations",
+            "country":"CÔTE D'IVOIRE"
         },
         {
             "id":2,
-            "name":"NSIA Banque"
+            "name":"NSIA Banque",
+            "country":"SENEGAL"
         },
         {
             "id":3,
-            "name":"NSIA Finance"
+            "name":"NSIA Finance",
+            "country":"CÔTE D'IVOIRE"
+
         },
         {
             "id":4,
-            "name":"NSIA Asset Management"
+            "name":"NSIA Asset Management",
+            "country":"CÔTE D'IVOIRE"
         },
         {
             "id":5,
-            "name":"NSIA Assurances"
+            "name":"NSIA Assurances",
+            "country":"CAMEROUN"
         }
     ]
 }
@@ -32,7 +38,16 @@ function rootReducer(state=initialeState, action){
                     ...state.users,action.payload
                 ]
             }
-            break;
+        break;
+        case constants.DELETE_USER:
+            let index = state.users.findIndex(user=>user.id==action.payload);
+            state.users.splice(index,1)
+            return{
+                users:[
+                    ...state.users
+                ]
+            }
+        break;
             
         default:
             return state;

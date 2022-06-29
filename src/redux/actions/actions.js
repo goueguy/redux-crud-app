@@ -1,12 +1,12 @@
 import constants from './../constants/actions-type';
-export const addUsers = (user)=>{
+export const addUsersAction = (user)=>{
     return {
         type: constants.ADD_USER,
         payload:user
     }
 }
 
-export const deleteUsers = (id)=>{
+export const deleteUsersAction = (id)=>{
     return {
         type: constants.DELETE_USER,
         payload:id

@@ -1,0 +1,30 @@
+{
+    "users":[
+        {
+            "id":1,
+            "name":"NSIA Participations",
+            "country":"CÔTE D'IVOIRE"
+        },
+        {
+            "id":2,
+            "name":"NSIA Banque",
+            "country":"SENEGAL"
+        },
+        {
+            "id":3,
+            "name":"NSIA Finance",
+            "country":"CÔTE D'IVOIRE"
+
+        },
+        {
+            "id":4,
+            "name":"NSIA Asset Management",
+            "country":"CÔTE D'IVOIRE"
+        },
+        {
+            "id":5,
+            "name":"NSIA Assurances",
+            "country":"CAMEROUN"
+        }
+    ]
+}
