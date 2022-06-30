@@ -1,5 +1,4 @@
 import constants from './../constants/actions-type';
-import { useSelector } from 'react-redux';
 
 const initialeState= {
     users:[
@@ -43,7 +42,7 @@ function userReducer(state=initialeState, action){
             }
         break;
         case constants.DELETE_USER:
-            let index = state.users.findIndex(user=>user.id==action.payload);
+            let index = state.users.findIndex(user=>user.id===action.payload);
             state.users.splice(index,1)
             return{
                 users:[
@@ -52,8 +51,7 @@ function userReducer(state=initialeState, action){
             }
         break;
         case constants.EDIT_USER:
-            let userFound = state.users.find(user=>user.id===action.payload);
-            console.log(action.payload);
+            
             return {
                 users:[
                     ...state.users
@@ -61,9 +59,10 @@ function userReducer(state=initialeState, action){
             }
         break;
         case constants.FIND_USER:
+            console.log(state.users,action.payload);
             return {
                 users: [
-                    ...state.users.map(user=>user.id===action.payload)
+                    ...state.users
                 ]
             }
         break;

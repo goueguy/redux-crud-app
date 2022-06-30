@@ -5,16 +5,19 @@ import { EditPopup } from './EditPopup';
 
 const Users = ({id,numero,name,country}) => {
     const dispatch = useDispatch();
-    
+    const [userId,setUserId]=useState();
     const users = useSelector(state=>state.users.users)
     const [editing,setEditing]=useState(true);
     const deleteUser=(id)=>{
-        dispatch(deleteUsersAction(id));
+        if(window.confirm("Êtes-vous sure de vouloir supprimer ?")){
+            dispatch(deleteUsersAction(id));
+        }
     }
-   
-    const showModal = (id)=>{
+
+    const editUser = (id)=>{
         setEditing(true)
-        dispatch(findUsersAction(id));
+        dispatch(editUsersAction(id));
+        se
     }
     return (
 
@@ -23,7 +26,7 @@ const Users = ({id,numero,name,country}) => {
                 <td>{name}</td>
                 <td>{country}</td>
                 <td className="d-flex justify-content-center">
-                    <button type="button" onClick={()=>showModal(id)} className="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <button type="button" onClick={()=>editUser(id)} className="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                         Editer User
                     </button>
                     <button type="button" onClick={()=>deleteUser(id)} className="btn btn-success">
@@ -33,10 +36,9 @@ const Users = ({id,numero,name,country}) => {
                 <td>
                     {
                         editing && (
-                          <EditPopup user={id}/>    
+                            <EditPopup user={id}/>    
                         )
                     }
-                   
                 </td>
             </tr>
     )

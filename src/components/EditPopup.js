@@ -1,7 +1,10 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 
 export const EditPopup = ({user}) => {
-    console.log(user);
+
+    useEffect(()=>{
+        console.log(user);
+    },[user])
   return (
     <div className="modal fade" id="staticBackdrop"  data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div className="modal-dialog">

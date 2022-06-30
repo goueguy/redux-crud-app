@@ -1,4 +1,6 @@
 import constants from './../constants/actions-type';
+import { useSelector } from 'react-redux';
+
 
 export const addUsersAction = (user)=>{
     return {
@@ -27,10 +29,10 @@ export const findUsersAction = (id)=>{
         payload:id
     }
 }
-export const getUsersAction = ()=>{
+export const getUsersAction = (users)=>{
     return {
         type: constants.GET_USER,
-        payload:[]
+        payload:users
     }
 }
 export const updateUsersAction = (user)=>{

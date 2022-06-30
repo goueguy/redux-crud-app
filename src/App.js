@@ -1,9 +1,15 @@
+import { Routes,Route } from "react-router-dom";
 import './App.css';
 import AddUser from './components/AddUser'
+import {EditPopup} from './components/EditPopup'
 function App() {
   return (
     <div className="App">
-      <AddUser/>
+      <Routes>
+         
+          <Route path="/" element={ <AddUser/>}/>
+          <Route path="/user/id" element={ <EditPopup/>}/>
+      </Routes>
     </div>
   );
 }
