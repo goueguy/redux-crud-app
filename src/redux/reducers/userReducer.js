@@ -40,7 +40,6 @@ function userReducer(state=initialeState, action){
                     ...state.users,action.payload
                 ]
             }
-        break;
         case constants.DELETE_USER:
             let index = state.users.findIndex(user=>user.id===action.payload);
             state.users.splice(index,1)
@@ -49,7 +48,6 @@ function userReducer(state=initialeState, action){
                     ...state.users
                 ]
             }
-        break;
         case constants.EDIT_USER:
             
             return {
@@ -57,7 +55,7 @@ function userReducer(state=initialeState, action){
                     ...state.users
                 ]
             }
-        break;
+
         case constants.FIND_USER:
             console.log(state.users,action.payload);
             return {
@@ -65,18 +63,19 @@ function userReducer(state=initialeState, action){
                     ...state.users
                 ]
             }
-        break;
+
         case constants.GET_USER:
             return {
                 users: [
                     ...state.users
                 ]
             }
-        break;
          case constants.UPDATE_USER:
-           
-            
-        break;
+            let users = state.users.map(user=>user.id===1 ? {...user}:user);
+            return {
+                ...state,
+                users:users
+            }
             
         default:
             return state;

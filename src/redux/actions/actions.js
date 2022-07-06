@@ -1,6 +1,4 @@
 import constants from './../constants/actions-type';
-import { useSelector } from 'react-redux';
-
 
 export const addUsersAction = (user)=>{
     return {
@@ -16,10 +14,10 @@ export const deleteUsersAction = (id)=>{
     }
 }
 
-export const editUsersAction = (id)=>{
+export const editUsersAction = (user)=>{
     return {
         type: constants.EDIT_USER,
-        payload:id
+        payload:user
     }
 }
 
