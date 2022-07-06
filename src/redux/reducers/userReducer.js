@@ -71,10 +71,14 @@ function userReducer(state=initialeState, action){
                 ]
             }
          case constants.UPDATE_USER:
-            let users = state.users.map(user=>user.id===1 ? {...user}:user);
             return {
-                ...state,
-                users:users
+                users: state.users.map(user=>{
+                    if(user.id!==action.payload.id){
+                        return user;
+                    }else{
+                        return {...user,name:action.payload.name,country:action.payload.country}
+                    }
+                })
             }
             
         default:

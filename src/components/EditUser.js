@@ -5,20 +5,23 @@ import { useState } from 'react';
 import { updateUsersAction } from '../redux/actions/actions';
 
 export const EditUser = () => {
-  const id = useParams().id;
+  let id = useParams().id;
+  console.log(id);
   let users = useSelector(state=>state.users.users);
   let userData = users.find(user=>user.id===parseInt(id));
+  const [userId,setUser]=useState(userData.id);
   const [name, setName]=useState(userData.name);
   const [country, setCountry]=useState(userData.country);
    const navigate = useNavigate();
   const nameRef= useRef()
   const countryRef= useRef();
   const dispatch = useDispatch();
+
   const editUser = (e)=>{
     e.preventDefault();
-    let id = userData.id;
+  
     let user = {
-        id:userData.id,
+        id:userId,
         name:nameRef.current.value,
         country:countryRef.current.value
     }
